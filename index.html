@@ -447,25 +447,6 @@
             font-size: 0.95rem;
         }
 
-        .info-card-button {
-            display: inline-block;
-            background: var(--earth-green);
-            color: var(--warm-white);
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            transition: all 0.2s ease;
-        }
-
-        .info-card-button:hover {
-            background: var(--earth-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
         /* Organizers */
         .organizers {
             max-width: 1100px;
@@ -552,7 +533,7 @@
                 Climate Change and Migration
                 <span>Economic and Financial Implications</span>
             </h1>
-            <p class="hero-subtitle">An international workshop bringing together researchers to explore the intersection of climate change, human mobility, and economic outcomes.</p>
+            <p class="hero-subtitle">An international workshop bringing together researchers to explore the intersection of climate change, migration, and economic outcomes.</p>
             
             <div class="hero-details">
                 <div class="hero-detail">
@@ -585,13 +566,13 @@
             <div class="sponsors-grid">
                 <!-- Row 1: FEN and Ingeniería Industrial -->
                 <div class="sponsors-row">
-                    <img src="images/logo_FEN.png" alt="FEN - Facultad de Economía y Negocios" class="sponsor-logo">
-                    <img src="images/logo_Ing_Ind.png" alt="Ingeniería Industrial" class="sponsor-logo">
+                    <img src="images/logo_Belmont.png" alt="Belmont Forum" class="sponsor-logo">
+                    <img src="images/logo_IAI.png" alt="IAI - Inter-American Institute" class="sponsor-logo">
                 </div>
                 <!-- Row 2: Belmont and IAI -->
                 <div class="sponsors-row">
-                    <img src="images/logo_Belmont.png" alt="Belmont Forum" class="sponsor-logo">
-                    <img src="images/logo_IAI.png" alt="IAI - Inter-American Institute" class="sponsor-logo">
+                    <img src="images/logo_FEN.png" alt="FEN - Facultad de Economía y Negocios" class="sponsor-logo">
+                    <img src="images/logo_Ing_Ind.png" alt="Ingeniería Industrial" class="sponsor-logo">
                 </div>
             </div>
         </div>
@@ -620,8 +601,8 @@
                         </svg>
                     </div>
                     <div class="deadline-text">
-                        <div class="label">Submission Deadline</div>
-                        <div class="date">February 15, 2026</div>
+                        <div class="label">Submission Deadline Extended</div>
+                        <div class="date">March 1, 2026</div>
                     </div>
                 </div>
 
@@ -633,7 +614,7 @@
                     </div>
                     <div class="deadline-text">
                         <div class="label">Decisions Communicated</div>
-                        <div class="date">February 28, 2026</div>
+                        <div class="date">March 7, 2026</div>
                     </div>
                 </div>
 
@@ -642,14 +623,14 @@
                 <!-- ============================================================ -->
                 <!-- TODO: Replace YOUR_FORM_ID with your actual Google Form ID   -->
                 <!-- ============================================================ -->
-                <a href="https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/viewform" 
+                <a href="https://forms.gle/9LM4YrZcMKrSFanT8" 
                    class="cta-button" 
                    target="_blank">
                     Submit Your Paper →
                 </a>
 
                 <p class="note">
-                    <strong>Funding Available:</strong> Limited funding is available for travel and accommodation. Please indicate in your submission if you would like to be considered.
+                    <strong>Funding Available:</strong> Limited funding is available for travel or accommodation. Please indicate in your submission if you would like to apply for it.
                 </p>
             </div>
 
@@ -690,11 +671,6 @@
                 </div>
                 <h4>Free Registration</h4>
                 <p>There is no registration fee to attend the workshop. All accepted papers will be presented. We expect submitting authors to present at the conference.</p>
-                <a href="https://negocios.uchile.cl/cambio-climatico-y-migracion-santiago-sera-sede-de-workshop-internacional-sobre-impactos-economicos-y-financieros/" 
-                   class="info-card-button" 
-                   target="_blank">
-                    Register to Attend →
-                </a>
             </div>
 
             <div class="info-card fade-in" style="transition-delay: 0.2s;">
@@ -704,7 +680,7 @@
                     </svg>
                 </div>
                 <h4>Travel Support</h4>
-                <p>Limited funding is available to support travel and accommodation expenses for presenters.</p>
+                <p>Limited funding is available to support travel and accommodation expenses for some of the presenters - if requested in advance.</p>
             </div>
         </div>
     </section>
@@ -728,15 +704,25 @@
     <footer>
         <p>Workshop on Climate Change and Migration: Economic and Financial Implications</p>
         <p style="margin-top: 0.5rem;">
-            <a href="/cdn-cgi/l/email-protection#64130b160f170c0b14490707092402010a4a11070c0d08014a0708"><span class="__cf_email__" data-cfemail="e0978f928b93888f90cd83838da086858ece958388898c85ce838c">[email&#160;protected]</span></a>
+            <a href="mailto:workshop-ccm@fen.uchile.cl">pmargareti@fen.uchile.cl</a>
         </p>
         <p style="margin-top: 1rem; opacity: 0.5;">© 2026 University of Chile. All rights reserved.</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Scroll animation
         const fadeElements = document.querySelectorAll('.fade-in');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-  
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
